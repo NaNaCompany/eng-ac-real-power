@@ -1,0 +1,59 @@
+export const tool={
+  "id": "E084",
+  "slug": "eng-ac-real-power",
+  "title": "교류 유효전력 계산기",
+  "title_en": "AC Real Power Calculator",
+  "category": "전기",
+  "category_en": "Electrical engineering",
+  "fields": [
+    {
+      "key": "v",
+      "label": "실효전압 V_rms",
+      "label_en": "RMS voltage V_rms",
+      "dimension": "voltage",
+      "example": 100,
+      "constraint": "nonnegative",
+      "display_unit": "V",
+      "display_value": "100"
+    },
+    {
+      "key": "i",
+      "label": "실효전류 I_rms",
+      "label_en": "RMS current I_rms",
+      "dimension": "current",
+      "example": 2,
+      "constraint": "nonnegative",
+      "display_unit": "A",
+      "display_value": "2"
+    },
+    {
+      "key": "phase",
+      "label": "전압-전류 위상차 φ",
+      "label_en": "Voltage-current phase difference φ",
+      "dimension": "angle",
+      "example": 1.0471975511965976,
+      "constraint": "signed",
+      "display_unit": "deg",
+      "display_value": "60"
+    }
+  ],
+  "result_label": "유효전력 P",
+  "result_label_en": "Real power P",
+  "result_dimension": "power",
+  "formula": "P = V_rms I_rms cosφ",
+  "purpose": "정현파 전압·전류와 위상차로 평균 유효전력 계산",
+  "purpose_en": "Calculate average real power from sinusoidal RMS voltage, current and phase.",
+  "assumptions": "V_rms,I_rms≥0, −180°≤φ≤180°. 같은 주파수 정현파 모델이며 음수 전력도 허용한다. 비정현파의 전체 역률·피상전력·무효전력은 출력하지 않는다.",
+  "assumptions_en": "Required: nonnegative RMS values and −180°≤φ≤180° for sinusoids at the same frequency. Signed real power is allowed. Nonsinusoidal total power factor, apparent power and reactive power are excluded.",
+  "sources": [
+    {
+      "label": "OpenStax · 15 4 power in an ac circuit",
+      "url": "https://openstax.org/books/university-physics-volume-2/pages/15-4-power-in-an-ac-circuit"
+    }
+  ],
+  "condition": "",
+  "condition_en": "",
+  "site": "https://nanalab.kr/eng-ac-real-power/",
+  "repository": "https://github.com/NaNaCompany/eng-ac-real-power",
+  "output_unit": "W"
+};
